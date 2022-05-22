@@ -1,4 +1,4 @@
-#!/usr/bin/env php
+use Illuminate\Contracts\Console\Kernel;#!/usr/bin/env php
 <?php
 
 use Symfony\Component\Console\Input\ArgvInput;
@@ -29,7 +29,7 @@ $app = require __DIR__.'/bootstrap/app.php';
 */
 
 $kernel = $app->make(
-    'Illuminate\Contracts\Console\Kernel'
+    Kernel::class
 );
 
 exit($kernel->handle(new ArgvInput, new ConsoleOutput));
